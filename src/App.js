@@ -7,7 +7,7 @@ import Webserviceone from './Component/Webserviceone';
 class App extends React.Component {
   constructor(props){
     super(props);
-    
+
     this.state = {
           error: null,
           isLoaded: false,
@@ -20,6 +20,7 @@ class App extends React.Component {
 
   MySecondButton=()=>{
     alert('Second button Called');
+    console.log('testing console',this.props.name);
   }
 
 
@@ -30,7 +31,9 @@ class App extends React.Component {
 
     <div>
 
-    <Webserviceone />
+    <h1> {this.props.firstarg} </h1>
+    
+    <Webserviceone name='akhzar' class='ms'/>
 
       <button onClick={this.MySecondButton}>
       My Second Button
@@ -43,6 +46,11 @@ class App extends React.Component {
     </div>
     );
   }
+
+  componentDidMount(){
+      console.log("Checking Console");
+  }
+
 }
 
 export default App;
